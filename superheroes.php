@@ -66,8 +66,28 @@ $superheroes = [
 
 ?>
 
+<?php
+	$temp= $_POST['name'];
+	$search = strip_tags($temp);
+	if ($search != "") {
+		$result = searchForName($search, $superheroes);
+		echo $result;
+		return;
+	}
+
+	function searchForName($namemu, $array) {
+	  foreach ($array as $key => $val) {
+		if ($val['name'] === $namemu || $val['alias'] === $namemu) {
+           return $val['name'] . "%" . $val['alias'] . "%" . $val['biography'];
+		}
+	}
+	return "No Avenger Found with that name/alias.";
+}
+?>
+
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
 </ul>
+

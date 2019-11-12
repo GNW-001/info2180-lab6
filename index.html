@@ -6,11 +6,16 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Bootleg Avengers Wikia</title>
 		<script src="app.js"></script>
+		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
-		<h6>some of the</h6>
-		<h1>Avengers Character Search</h1>
-		<button id="bttn">Search</button>
-		<p id="para">AJAX Man</p>
+	<body class = "grid-container">
+		<h6 class = "titleS">some of the</h6>
+		<h1 class = "titleB">Avengers Character Search</h1>
+		<div class ="searchbar">
+			<input type="text" placeholder="Name or Alias" pattern="[A-Za-z]+" maxlength="20" id="in">
+			<button id="bttn">Search</button>
+		</div>
+		<p id="para">Mr. Stark, I don't feel so good</p>
+		<div id="result"></div>
 	</body>
 </html>
